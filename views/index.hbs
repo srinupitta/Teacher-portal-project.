@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top:50px;
+            margin-bottom: 20px;
+        }
+        h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top:30px;
+            margin-bottom: 30px;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+            font-size: 18px;
+        }
+        button{
+            padding: 10px 6px;
+            background-color: green;
+            border: none;
+            margin-bottom: 20px;
+             width: 25%;
+             cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teacher Portal</h1>
+    <hr>
+    <div class="container">
+        <button id="added"><a href="/add">Add Student</a></button>
+        <button id="searched"><a href="/search">Search Student</a></button>
+        <button id="updated"><a href="/update">Update Student</a></button>
+        <button id="deleted"> <a href="/delete">Delete Student</a></button>
+        <button id="viewed"><a href="/view">View Students`</a></button>
+        {{!-- <button id="added">adddddd</button> --}}
+        <button id="exit" style="background-color: maroon;"><a href="./">Exit</a></button>
+    </div>
+    <script>
+       const added = document.getElementById('added');
+       added.addEventListener("click",function(){
+        window.location.href="http://localhost:8005/add";
+       })
+       const searched = document.getElementById('searched');
+       searched.addEventListener("click",function(){
+        window.location.href="http://localhost:8005/search";
+       })
+       const updated = document.getElementById('updated');
+       updated.addEventListener("click",function(){
+        window.location.href="http://localhost:8005/update";
+       })
+       const deleted = document.getElementById('deleted');
+       deleted.addEventListener("click",function(){
+        window.location.href="http://localhost:8005/delete";
+       })
+       const viewed = document.getElementById('viewed');
+       viewed.addEventListener("click",function(){
+        window.location.href="http://localhost:8005/view";
+       })
+       const exit = document.getElementById('exit');
+       exit.addEventListener("click",function(){
+        window.location.href="http://localhost:8005/";
+       })
+    </script>
+</body>
+</html>

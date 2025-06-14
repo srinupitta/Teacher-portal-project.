@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="search-container">
+   <form action="/updatesearch" class="form-class">
+   <h3 style="color: black;">SEARCH STUDENT</h3>
+    <hr>
+   <label for="rollno"><b style="color:black">Roll No</b></label>
+    <input type="text" placeholder="Enter Rollno To Search" name="rollno" style="width: 20%;display:block" id="rollno" required>
+
+    <button type="submit" class="registerbtn">SEARCH STUDENT</button>   
+   <button class="back-home" id="back">
+    <a href="./index">&#8592;</a>
+    </button>
+
+    <br>
+     {{#if umsg}}
+    <h2 style="color: black;">Details Updated Successfully</h2>
+    {{/if}}
+   {{#if msg2}}
+   <h2 style="color: black;">Data not found</h2>
+   {{/if}}
+
+</form>
+</div>
+
+   {{#if msg1}}
+   <div class="container">
+   <form action="/updatestudent" >
+   <h3>Update Student Details</h3>
+   
+    <hr>
+   {{#data}}
+    <label for="name"><b>Student name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" value="{{studentName}}" id="name" required>
+    <label for="roll no"><b>Roll No</b></label>
+    <input type="text" placeholder="Enter RollNo" name="rollno" value="{{studentRollno}}" id="rollno" required readonly>
+
+    <label for="phn"><b>Phone no</b></label>
+    <input type="phone" placeholder="Enter Phone Number"  value="{{studentPhno}}" name="phone" id="phone" required>
+
+    <label for="eml-id"><b>Email Id</b></label>
+    <input type="email" placeholder="Enter Email Id" name="email" value="{{studentEmail}}" id="email" required>
+  <div class="gender_g">
+     <strong>Gender</strong>
+     <input type="radio" name="gender" id="" value="Male" required readonly> Male
+     <input type="radio" name="gender" id=""  value="Female" required readonly>  Female
+  </div>
+    <button type="submit" class="registerbtn">Update Student</button>
+   {{/data}}
+    <button class="back-home" id="back">
+    <a href="./index">&#8592;</a>
+    </button>
+   
+</form>
+</div>
+   {{/if}}
+   <script>
+    const back = document.getElementById('back');
+    back.addEventListener("click",function(){
+        window.location.href="http://localhost:8005/index"
+    })
+</script>
+</body>
+</html>

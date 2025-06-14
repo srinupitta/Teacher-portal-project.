@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <div class="container">
+    <h2>Teacher Login</h2>
+    <form action="/teacher-submit" method="post" class="form-class">
+    <h4 >Login With Your Credentials</h3>
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+    <label for="pass"><b>Password</b></label>
+    <input type="password" placeholder="Enter password" name="password" id="pass" required>
+     <button type="submit" class="registerbtn">Submit</button>
+        {{#if msggg}}
+        <h3>Invalid Details</h3>
+        {{/if}}
+    </form>
+</div>
+</body>
+</html>

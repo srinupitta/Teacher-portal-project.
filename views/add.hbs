@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+    <form action="/addstudent"  >
+   <h3>ADD STUDENT</h3>
+   
+    <hr>
+
+    <label for="name"><b>Student name</b></label>
+    <input type="text" placeholder="Enter Name" style="color:black;" name="name" id="name" required>
+    <label for="roll no"><b>Roll No</b></label>
+    <input type="text" placeholder="Enter RollNo" name="rollno" id="rollno" required>
+
+    <label for="phn"><b>Phone no</b></label>
+    <input type="phone" placeholder="Enter Phone Number" name="phone" id="phone" required>
+
+    <label for="eml-id"><b>Email Id</b></label>
+    <input type="email" placeholder="Enter Email Id" name="email" id="email" required>
+   
+  <div class="gender_g">
+     <strong>Gender</strong>
+     <input type="radio" name="gender" id="" value="Male" required> Male
+     <input type="radio" name="gender" id=""  value="Female" required>  Female
+  </div>
+    <button type="submit" class="registerbtn">ADD STUDENT</button>
+
+    <button class="back-home" id="back">
+    <a href="./index">&#8592;</a>
+    </button>
+    {{#if msg}}
+        <h3>Data Inserted</h3>
+    {{/if}}
+    {{#if checkmsg}}
+        <h3>The details given already present</h3>
+    {{/if}}
+</form>
+</div>
+<script>
+    const back = document.getElementById('back');
+    back.addEventListener("click",function(){
+        window.location.href="http://localhost:8005/index"
+    })
+</script>
+</body>
+</html>
